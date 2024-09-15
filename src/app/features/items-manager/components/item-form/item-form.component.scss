@@ -1,0 +1,76 @@
+@import '@styles/variables.scss';
+
+.item-form {
+  h1 {
+    margin-bottom: 35px;
+  }
+
+  img.icon-x {
+    z-index: 1;
+    position: absolute;
+    right: 35px;
+    cursor: pointer;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 80% auto;
+    gap: 10px;
+
+    @media (max-width:$screen-md) {
+      grid-template-columns: 50% auto;
+
+    }
+
+  }
+}
+
+::ng-deep .cdk-overlay-container {
+  .custom-dialog-container {
+    position: absolute !important;
+    right: 0;
+  }
+
+  .mdc-dialog__surface::before {
+    background: var(--bg-main);
+  }
+
+  mat-dialog-actions.mat-mdc-dialog-actions.mdc-dialog__actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+  }
+
+  .item-form {
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+  }
+
+  .mat-mdc-dialog-content.mdc-dialog__content {
+    height: 100vh;
+  }
+
+  mat-icon.mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color {
+    transform: rotate(-90deg);
+  }
+
+  .inputIcon {
+    position: absolute;
+    right: 0px;
+    top: 15px;
+  }
+
+  .mat-mdc-text-field-wrapper .mat-mdc-form-field-input-control.mdc-text-field__input[type=color] {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 22px;
+  }
+
+  .mat-mdc-form-field-infix {
+
+    width: 55px;
+
+  }
+}

@@ -1,0 +1,5 @@
+<button [style]="{'background-color': !isDisabled ? color: ''}" mat-flat-button type="buttonType" class="btn"
+  (click)="onClick()" [disabled]="isDisabled">
+  <ng-content></ng-content>
+  <span *ngIf="buttonText"> {{buttonText }}</span>
+</button>

@@ -1,0 +1,37 @@
+@import '@styles/variables.scss';
+
+:host::ng-deep {
+  .url-form-wrapper {
+    .mat-mdc-text-field-wrapper {
+      &.mdc-text-field mdc-text-field--filled {
+        box-shadow: none;
+      }
+
+      height: 43px;
+      padding-left: 5px;
+    }
+
+    .mat-mdc-form-field:not(.mat-form-field-disabled) .mat-mdc-floating-label.mdc-floating-label {
+      &[ng-reflect-floating="false"] {
+        top: 22px;
+      }
+    }
+
+  }
+}
+
+.url-form-wrapper {
+  base-btn {
+    margin-left: 5px;
+  }
+
+  form {
+    display: flex;
+    max-width: 100%;
+    width: 32vw;
+
+    @media (max-width:$screen-md) {
+      width: 100vw;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.btn {
+  max-width: 100%;
+  color: red;
+  height: 43px;
+}
+
+:host ::ng-deep {
+  span.mdc-button__label {
+    display: flex;
+    align-items: center;
+  }
+
+  .mat-mdc-unelevated-button:not(:disabled) {
+    color: var(--unnamed-color-ffffff);
+  }
+}

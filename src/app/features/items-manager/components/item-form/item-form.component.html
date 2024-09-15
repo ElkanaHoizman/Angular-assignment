@@ -1,0 +1,23 @@
+<div class="item-form">
+  <h1 *ngIf="!data.isEdit; else templateTitle" mat-dialog-title>Create New</h1>
+  <img ngSrc="./assets/images/x.svg" width="30" height="30" [mat-dialog-close]="false" class="icon-x">
+  <ng-template #templateTitle>
+    <h1 mat-dialog-title>Edit Item</h1>
+  </ng-template>
+  <div mat-dialog-content>
+    <form [formGroup]="itemForm" (ngSubmit)="onSave()">
+      <div class="row">
+        <base-input label="Name" formControlName="name"></base-input>
+        <base-input label="color" formControlName="color" type="color">
+          <mat-icon class="inputIcon" inputIcon>arrow_back_ios</mat-icon>
+        </base-input>
+      </div>
+      <base-input label="createdBy" formControlName="createdBy"></base-input>
+    </form>
+  </div>
+  <mat-dialog-actions>
+    <base-btn color="#797979" buttonText="CANCEL" [mat-dialog-close]="false"></base-btn>
+    <base-btn color="#3fa577" [isDisabled]="!itemForm.valid" buttonText="SAVE" [mat-dialog-close]="itemForm.value"
+      cdkFocusInitial></base-btn>
+  </mat-dialog-actions>
+</div>

@@ -1,0 +1,11 @@
+<ul class="validation-errors">
+  @for (error of errors |keyvalue; track error) {
+  <li>
+    @if (errorMessages[error.key]) {
+    <span>
+      {{ errorMessages[error.key] }}
+    </span>
+    }
+  </li>
+  }
+</ul>

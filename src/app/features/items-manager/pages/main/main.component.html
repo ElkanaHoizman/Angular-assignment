@@ -1,0 +1,9 @@
+<div class="url-form-wrapper">
+  <form [formGroup]="urlForm" (ngSubmit)="setUrl()">
+    <base-input [customErrorMessages]="errorMessages" label="URL" inputId="URL" type="text"
+      formControlName="url"></base-input>
+    <base-btn buttonText="GO" [isDisabled]="!urlForm.valid"></base-btn>
+  </form>
+</div>
+<app-management-tool></app-management-tool>
+<app-list-items></app-list-items>

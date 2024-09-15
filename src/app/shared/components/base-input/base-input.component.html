@@ -1,0 +1,18 @@
+<div class="form-control">
+  @if(controle) {
+
+  <mat-form-field class="full-width">
+    <span class="icons">
+      <ng-content select="[labelIcon]"></ng-content>
+    </span> <mat-label *ngIf="label" [class.required]="isRequired">
+      {{label}}
+
+    </mat-label>
+    <input matInput [required]="isRequired" [type]="type" [id]="inputId" [formControl]="controle">
+    <ng-content select="[inputIcon]"></ng-content>
+  </mat-form-field>
+
+  <validation-errors *ngIf="controle.touched" [customErrorMessages]="customErrorMessages" [errors]="controle.errors">
+  </validation-errors>
+  }
+</div>

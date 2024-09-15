@@ -1,0 +1,18 @@
+section.management-tool {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+  color: var(--unnamed-color-0e4f6e);
+  margin-bottom: 1em;
+
+  .actions {
+    display: flex;
+    align-items: center;
+
+    img {
+      cursor: pointer;
+      margin-left: 12px;
+    }
+  }
+}

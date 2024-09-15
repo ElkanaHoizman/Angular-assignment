@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@styles/variables.scss';
+
+
+:root {
+  body {
+    margin: 2.5vh 3.7vw;
+    padding: unset;
+    background:var(--bg-main);
+  }
+}
+
+html.modal-open {
+  overflow: hidden;
+
+  body {
+    overflow: hidden;
+  }
+}

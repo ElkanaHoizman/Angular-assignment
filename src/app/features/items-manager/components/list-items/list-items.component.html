@@ -1,0 +1,39 @@
+<section class="list-items" *ngIf=" this.dataSource?.data.length ; else templateEmpty">
+
+  <base-input (keyup)="applyFilter($event)" label="Find by name…" inputId="search" type="text" formControlName="search">
+    <mat-icon labelIcon>search</mat-icon>
+  </base-input>
+
+  <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+    class="mat-elevation-z8 " [class]="displayType$ | async">
+    @for (column of displayedColumns ; track column) {
+    <ng-container [matColumnDef]="column">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header [sortActionDescription]="getSortActionName(column)">
+        {{column | addSpaceBeforeCapital}}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <span class="column-type" [class]="column">
+          @if (column == 'actions') {
+          <button type="button" class="edit" mat-icon-button matSuffix (click)="editItem(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button type="button" class="delete" mat-icon-button matSuffix (click)="deletetem(element )">
+            <mat-icon>delete</mat-icon>
+          </button>
+          }@else {
+          <span class="row-text"
+            [ngStyle]="{'background-color': column == 'color' ? element[column] : '' }">{{element[column]}}</span>
+          }
+        </span>
+      </td>
+    </ng-container>
+    }
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</section>
+<ng-template #templateEmpty>
+
+  <div class="empty-data"> No data to display</div>
+</ng-template>
